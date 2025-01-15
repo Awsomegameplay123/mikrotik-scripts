@@ -4,9 +4,9 @@
 # Variables
 :local nextdnsID
 :local deviceName
-:set nextdnsID "abc123"
+:set nextdnsID "3d348f"
 # Avoid spaces or use unicode
-:set deviceName "MikroTik-AX2"
+:set deviceName "MikroTik"
 
 # disable doh (temporarily)
 /ip dns set verify-doh-cert=no
@@ -21,10 +21,10 @@
 
 /ip dns
     static remove [find name="dns.nextdns.io"]
-    static add name=dns.nextdns.io address=45.90.28.0 type=A
-    static add name=dns.nextdns.io address=45.90.30.0 type=A
-    static add name=dns.nextdns.io address=2a07:a8c0:: type=AAAA
-    static add name=dns.nextdns.io address=2a07:a8c1:: type=AAAA
+    static add name=dns.nextdns.io address=45.90.28.101 type=A
+    static add name=dns.nextdns.io address=45.90.30.101 type=A
+    static add name=dns.nextdns.io address=2a07:a8c0::3d:348f type=AAAA
+    static add name=dns.nextdns.io address=2a07:a8c1::3d:348f type=AAAA
 
 # Configure Device Name with NextDNS, if exists.
 :if ( $deviceName == "" ) do={
